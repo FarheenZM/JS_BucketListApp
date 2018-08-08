@@ -39,9 +39,26 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client) {
     res.send();
   })
 
-  console.log('Connected to database');
+  server.delete('/api/listcountries/:id', function(req, res){
+    const objectID = ObjectID(req.params.id);
+    const listCountries = db.collection('listCountries');
+    const filterObject = {_id: objectID};
+    listCountries.deleteOne(filterObject, function(err, result){
+    if(err){
+      console.log(err);
+      res.status(500);
+      res.send();
+    }
+    res.status(201);
+    res.json(result);
+    res.send();
+  })
+})
 
-  server.listen(3000, function(){
-    console.log("Listening on port 3000");
-  });
+
+console.log('Connected to database');
+
+server.listen(3000, function(){
+  console.log("Listening on port 3000");
+});
 })
