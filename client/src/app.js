@@ -93,8 +93,7 @@ const appStart = function(){
   console.log("It's working!");
 
   const url = 'https://restcountries.eu/rest/v2/all'
-  makeRequest(url, requestComplete);
-
+  
   // const createButton = document.querySelector("#submit-country");
   // createButton.addEventListener("click", addCountryButtonClicked);
 
