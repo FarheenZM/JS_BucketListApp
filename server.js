@@ -27,6 +27,21 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client) {
     })
   })
 
+  server.post('/api/listcountries', function(req,res) {
+    const listCountries = db.collection('listCountries');
+    const countryToSave = req.body;
+    listCountries.save(countryToSave, function(err, result) {
+      if(err){
+        console.log(err);
+        res.status(500);
+        res.send();
+      }
+      console.log("saved to database");
+      res.status(201);
+      res.json(result.ops[0]);
+    })
+  })
+
   server.delete('/api/listcountries', function(req,res) {
     const filterObject = {};
     const listCountries = db.collection('listCountries');
