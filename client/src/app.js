@@ -5,6 +5,9 @@ const listAPIRequest = new Request('http://localhost:3000/api/listcountries')
 const getBucketListRequestComplete = function(allBucketListItems){
   console.log(allBucketListItems);
 }
+
+
+
 const CountryDetailsView = require('./views/countryDetailsView');
 
 const countryView = new CountryDetailsView();
