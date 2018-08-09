@@ -6,6 +6,10 @@ const getBucketListRequestComplete = function(allBucketListItems){
   console.log(allBucketListItems);
 }
 
+const addToListRequestComplete = function(newListItem){
+  console.log(newListItem);
+}
+
 
 
 const CountryDetailsView = require('./views/countryDetailsView');
@@ -69,6 +73,9 @@ const addCountryButtonClicked = function(countries){
   const selectedValue = document.querySelector('#submit-country').value;
   let country = countries[selectedValue]
   console.log(country);
+
+  listAPIRequest.post(addToListRequestComplete, country);
+
 }
 
 
