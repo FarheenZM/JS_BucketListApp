@@ -53,10 +53,10 @@ const countryDetails = function(country){
   // clearContent(div);
 
   const nameTag = document.createElement('p');
-  nameTag.innerText = "Name: " + country.name;
+  nameTag.innerText = "Country: " + country.name;
 
   const capitalTag = document.createElement('p');
-  capitalTag.innerText = "Country: " + country.capital;
+  capitalTag.innerText = "Capital: " + country.capital;
 
   const populationTag = document.createElement('p');
   populationTag.innerText = "Population: " + country.population;
