@@ -8,6 +8,7 @@
   <script src="bundle.js"></script>
 </head>
 <body>
+  <div id="large_image">
   <nav id="menu">
   <div class="navbar">
     <a href="#home">Home</a>
@@ -16,14 +17,16 @@
   </div>
   </nav>
   <h3>Select a country and add it to bucket list</h3>
-  <div id="large_image">
   <div class="container">
     <select id="select-country"></select>
-  </div>
+    </div>
 </div>
+<div class="details-country">
   <div id="div-country"></div>
       <button type="submit" id="submit-country">Add to Bucket List</button>
+    </div>
       <div class="list-container">
+          <h2>BucketList countries</h2>
           <ul id="BucketList">
           </ul>
           <button id="deleteButton" type="submit">Delete All</button>
