@@ -53,16 +53,16 @@ const countryDetails = function(country){
   // clearContent(div);
 
   const nameTag = document.createElement('p');
-  nameTag.innerText = "Name : " + country.name;
+  nameTag.innerText = "Name: " + country.name;
 
   const capitalTag = document.createElement('p');
-  capitalTag.innerText = "Country : " + country.capital;
+  capitalTag.innerText = "Country: " + country.capital;
 
   const populationTag = document.createElement('p');
-  populationTag.innerText = "Population :" + country.population;
+  populationTag.innerText = "Population: " + country.population;
 
   const regionTag = document.createElement('p');
-  regionTag.innerText = "Region :" + country.region;
+  regionTag.innerText = "Region: " + country.region;
 
   const imageTag = document.createElement('img');
   imageTag.src = country.flag;
@@ -93,7 +93,7 @@ const appStart = function(){
   console.log("It's working!");
 
   const url = 'https://restcountries.eu/rest/v2/all'
-  
+  makeRequest(url, requestComplete);
   // const createButton = document.querySelector("#submit-country");
   // createButton.addEventListener("click", addCountryButtonClicked);
 
