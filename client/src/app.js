@@ -1,3 +1,12 @@
+const Request = require('./services/request.js');
+
+const listAPIRequest = new Request('http://localhost:3000/api/listcountries')
+
+const getBucketListRequestComplete = function(allBucketListItems){
+  console.log(allBucketListItems);
+}
+
+
 const makeRequest = function(url, callback){
 
   const request = new XMLHttpRequest();
@@ -91,6 +100,8 @@ const addCountryButtonClicked = function(countries){
 
 const appStart = function(){
   console.log("It's working!");
+
+  listAPIRequest.get(getBucketListRequestComplete);
 
   const url = 'https://restcountries.eu/rest/v2/all'
   makeRequest(url, requestComplete);
