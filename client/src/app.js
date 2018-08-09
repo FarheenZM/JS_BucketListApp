@@ -1,3 +1,8 @@
+const CountryDetailsView = require('./views/countryListView');
+
+const countryView = new CountryDetailsView();
+
+
 const makeRequest = function(url, callback){
 
   const request = new XMLHttpRequest();
@@ -42,40 +47,11 @@ const renderCountry = function (countries) {
     let country = countries[this.value];
 
     // saveCountry(country);
-    countryDetails(country);
+    countryView.countryDetails(country);
   });
 
 }
 
-
-const countryDetails = function(country){
-  const div = document.getElementById('div-country');
-  // clearContent(div);
-
-  const nameTag = document.createElement('p');
-  nameTag.innerText = "Name: " + country.name;
-
-  const capitalTag = document.createElement('p');
-  capitalTag.innerText = "Country: " + country.capital;
-
-  const populationTag = document.createElement('p');
-  populationTag.innerText = "Population: " + country.population;
-
-  const regionTag = document.createElement('p');
-  regionTag.innerText = "Region: " + country.region;
-
-  const imageTag = document.createElement('img');
-  imageTag.src = country.flag;
-
-  div.appendChild(nameTag);
-  div.appendChild(capitalTag);
-  div.appendChild(populationTag);
-  div.appendChild(regionTag);
-  div.appendChild(imageTag);
-
-  // return div;
-
-}
 
 
 const addCountryButtonClicked = function(countries){
