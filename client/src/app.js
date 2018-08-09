@@ -1,15 +1,14 @@
+const BucketListView = require('./views/BucketListView');
 const Request = require('./services/request.js');
 
+const bucketList = new BucketListView();
 const listAPIRequest = new Request('http://localhost:3000/api/listcountries')
 
 const getBucketListRequestComplete = function(allBucketListItems){
-  console.log(allBucketListItems);
+allBucketListItems.forEach((country => bucketList.addCountry(country)))
 }
 
-
-
 const CountryDetailsView = require('./views/countryDetailsView');
-
 const countryView = new CountryDetailsView();
 
 
@@ -84,5 +83,10 @@ const appStart = function(){
   // createButton.addEventListener("click", addCountryButtonClicked);
 
 };
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', appStart);
