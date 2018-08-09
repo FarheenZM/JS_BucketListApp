@@ -5,6 +5,9 @@ const listAPIRequest = new Request('http://localhost:3000/api/listcountries')
 const getBucketListRequestComplete = function(allBucketListItems){
   console.log(allBucketListItems);
 }
+const CountryDetailsView = require('./views/countryListView');
+
+const countryView = new CountryDetailsView();
 
 
 const makeRequest = function(url, callback){
@@ -51,38 +54,8 @@ const renderCountry = function (countries) {
     let country = countries[this.value];
 
     // saveCountry(country);
-    countryDetails(country);
+    countryView.countryDetails(country);
   });
-
-}
-
-
-const countryDetails = function(country){
-  const div = document.getElementById('div-country');
-  // clearContent(div);
-
-  const nameTag = document.createElement('p');
-  nameTag.innerText = "Country: " + country.name;
-
-  const capitalTag = document.createElement('p');
-  capitalTag.innerText = "Capital: " + country.capital;
-
-  const populationTag = document.createElement('p');
-  populationTag.innerText = "Population: " + country.population;
-
-  const regionTag = document.createElement('p');
-  regionTag.innerText = "Region: " + country.region;
-
-  const imageTag = document.createElement('img');
-  imageTag.src = country.flag;
-
-  div.appendChild(nameTag);
-  div.appendChild(capitalTag);
-  div.appendChild(populationTag);
-  div.appendChild(regionTag);
-  div.appendChild(imageTag);
-
-  // return div;
 
 }
 
@@ -90,11 +63,10 @@ const countryDetails = function(country){
 const addCountryButtonClicked = function(countries){
   // event.preventDefault();
   console.log("button clicked");
-  const selectedValue = document.querySelector('#select-country').value;
+  const selectedValue = document.querySelector('#submit-country').value;
   let country = countries[selectedValue]
   console.log(country);
-
-};
+}
 
 
 
