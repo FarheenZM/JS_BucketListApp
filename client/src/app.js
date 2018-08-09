@@ -53,15 +53,13 @@ const renderCountry = function (countries) {
 }
 
 
-
 const addCountryButtonClicked = function(countries){
   // event.preventDefault();
   console.log("button clicked");
-  const selectedValue = document.querySelector('#select-country').value;
+  const selectedValue = document.querySelector('#submit-country').value;
   let country = countries[selectedValue]
   console.log(country);
-
-};
+}
 
 
 
@@ -74,5 +72,10 @@ const appStart = function(){
   // createButton.addEventListener("click", addCountryButtonClicked);
 
 };
+
+
+const app = function(){
+
+  l
 
 document.addEventListener('DOMContentLoaded', appStart);
