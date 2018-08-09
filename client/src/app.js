@@ -10,8 +10,6 @@ const addToListRequestComplete = function(newListItem){
   console.log(newListItem);
 }
 
-
-
 const CountryDetailsView = require('./views/countryDetailsView');
 
 const countryView = new CountryDetailsView();
@@ -70,10 +68,8 @@ const renderCountry = function (countries) {
 const addCountryButtonClicked = function(countries){
   // event.preventDefault();
   console.log("button clicked");
-  const selectedValue = document.querySelector('#submit-country').value;
+  const selectedValue = document.querySelector('#select-country').value;
   let country = countries[selectedValue]
-  console.log(country);
-
   listAPIRequest.post(addToListRequestComplete, country);
 
 }
