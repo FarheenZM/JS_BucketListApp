@@ -16,7 +16,8 @@ BucketList.prototype.clear = function (country) {
 
 BucketList.prototype.render = function (country) {
   const ul = document.querySelector('#BucketList')
-  const li = document.querySelector('li');
+  const li = document.createElement('li');
+
   const text = document.createElement('p');
   text.innerText = `${country.name}`
   li.appendChild(text);
